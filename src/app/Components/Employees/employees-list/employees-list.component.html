@@ -1,0 +1,44 @@
+<div class="container align-items-center col-md-12 col-12 mt-3"  >
+    <span *ngIf="employee.length==0"> No Details found</span>
+<table class="table table-bordered" *ngIf="employee.length!=0" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+       
+        <th scope="col">Phone</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Department</th>
+        <th scope="col">Edit/Delete</th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employee; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+       
+        <td>{{item.phone}}</td>
+        <td>{{item.salary}}</td>
+        <td>{{item.department}}</td>
+
+
+        <td>
+          <button class="btn btn-secondary" [routerLink]="['/employee/edit/',item.id]">Edit</button>
+          <button class="btn btn-danger"  (click)="deleteBtn(item.id)" style=" margin-left: 1rem;">Delete</button>
+
+
+        </td>
+
+
+        
+      </tr>
+     
+     
+    </tbody>
+  </table>
+
+</div>

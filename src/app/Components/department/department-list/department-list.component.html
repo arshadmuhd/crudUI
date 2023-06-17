@@ -1,0 +1,38 @@
+<div class="container align-items-center col-md-12 col-12 mt-3"  >
+    <button class="btn btn-primary mr-0" routerLink="/department/add">Add Department</button>
+    <span *ngIf="department.length==0"> No Details found</span>
+<table class="table table-bordered mt-3" *ngIf="department.length!=0" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Department Name</th>
+        <th scope="col">Department Status</th>
+        <th scope="col">Edit/Delete</th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of department; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.departmentName}}</td>
+        <td>{{item.departmentStatus}}</td>
+
+
+        <td>
+          <button class="btn btn-secondary" [routerLink]="['/department/edit/',item.id]">Edit</button>
+          <button class="btn btn-danger"  style=" margin-left: 1rem;">Delete</button>
+          <!-- (click)="deleteBtn(item.id)"  -->
+
+
+        </td>
+
+
+        
+      </tr>
+     
+     
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,38 @@
+
+<div class="container my-5">
+    <h2>Add New Student</h2>
+    <form #myform="ngForm" (ngSubmit)="addStudent()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Name</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Name" name="name" [(ngModel)]="addStudentRequest.studentName">
+              </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Date of Birth</label>
+            <input type="date" class="form-control" id="inputEmail4" placeholder="Email" name="email" [(ngModel)]="addStudentRequest.studentDob">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Student District</label>
+          <input type="number" class="form-control" id="phonenumber" placeholder="12***88**" name="phone"  [(ngModel)]="addStudentRequest.studentDistrict">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Student Place</label>
+            <input type="number" class="form-control" id="phonenumber" placeholder="12***88**" name="phone"  [(ngModel)]="addStudentRequest.studentPlace">
+          </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Student Status</label>
+            <select id="inputState" name="department" class="form-control" [(ngModel)]="addStudentRequest.studentStatus">
+              <option name="department" selected>Choose...</option>
+              <option name="department" >Active</option>
+              <option name="department">Inactive</option>
+            
+            </select>
+          </div>
+      
+       
+    
+        <button type="submit" class="btn btn-primary mt-2">Add Employee</button>
+      </form>
+    
+    </div>
