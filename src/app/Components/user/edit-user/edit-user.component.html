@@ -1,0 +1,30 @@
+
+
+<div class="container my-5">
+    <h2>Edit User</h2>
+    
+    <form #myform="ngForm" (ngSubmit)="updateUser()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">User Name</label>
+                <input type="text" class="form-control" placeholder="User Name" name="userName" [(ngModel)]="editUserRequest.userName">
+
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="text" class="form-control" placeholder="Password" name="password" [(ngModel)]="editUserRequest.password">
+
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">User Role</label>
+                <input type="text" class="form-control" placeholder="User Role" name="userRole" [(ngModel)]="editUserRequest.userRole" readonly>
+
+              </div>
+              </div>
+       
+    
+        <button type="submit" class="btn btn-primary mt-2">Update User</button>
+      </form>
+    
+    </div>

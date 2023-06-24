@@ -3,20 +3,25 @@
     <h2>Edit Department</h2>
     <form #myform="ngForm" (ngSubmit)="updateDepartment()">
         <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Department Name</label>
-                <select id="inputState" name="departmentName" class="form-control" [(ngModel)]="editDepartmentRequest.departmentName">
-                  <option name="departmentName" selected>Choose...</option>
-                  <option name="departmentName" >CSE</option>
-                  <option name="departmentName">CIVIL</option>
-                  <option name="departmentName"  >MECH</option>
-                  <option name="departmentName">ECE</option>
-        
+          <div class="form-group">
+            <label for="inputAddress">Department Name </label>
+            <input type="text" class="form-control" id="" name="departmentName"  [(ngModel)]="editDepartmentRequest.departmentName">
+          </div>
+
+              <div class="form-group col-md-4">
+                <label for="inputState">Department Head</label>
+                <select id="inputState" name="departmentHeadName" class="form-control" [(ngModel)]="editDepartmentRequest.departmentHeadName">
+    
+              <option name="departmentHeadName"  *ngFor="let item of teachers" value="{{item.teacherName}}">{{item.teacherName}}</option>
+    
                 </select>
               </div>
+         
+
+
               <div class="form-group col-md-4">
                 <label for="inputState">Department Status</label>
-                <select id="inputState" name="departmentStatus" class="form-control" [(ngModel)]="editDepartmentRequest.departmentStatus">
+                <select id="inputState" name="status" class="form-control" [(ngModel)]="status">
                   <option name="departmentName" selected>Choose...</option>
                   <option name="department" value="true" >Active</option>
                   <option name="department" value="false" >inactive</option>

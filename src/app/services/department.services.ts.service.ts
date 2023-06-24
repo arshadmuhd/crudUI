@@ -16,12 +16,14 @@ export class DepartmentServicesTsService {
    }
 
    addDepartment(addDepartmentRequest:Department):Observable<Department>{
+    console.log(addDepartmentRequest);
+   
     addDepartmentRequest.id='00000000-0000-0000-0000-000000000000';
     return this.http.post<Department>('https://localhost:7083/api/Department',addDepartmentRequest);
   }
 
   getDepartment(id:string):Observable<Department>{
-debugger;
+// debugger;
     return this.http.get<Department>('https://localhost:7083/api/Department/'+id)
  
    }
@@ -32,6 +34,13 @@ debugger;
      console.log(editDepartmentRequest+" 2334");
      
     return this.http.put<Department>('https://localhost:7083/api/Department/'+id,editDepartmentRequest)
+   }
+
+
+   deleteDepartment(id:string):Observable<Department>{
+    console.log(id+ " ret"); 
+    return this.http.delete<Department>('https://localhost:7083/api/Department/'+id);
+    
    }
 
 

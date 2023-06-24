@@ -1,6 +1,7 @@
 <div class="container align-items-center col-md-12 col-12 mt-3"  >
+  <button class="btn btn-primary mr-0" routerLink="employee/add">Add Employee</button>
     <span *ngIf="employee.length==0"> No Details found</span>
-<table class="table table-bordered" *ngIf="employee.length!=0" >
+<table class="table table-bordered mt-3" *ngIf="employee.length!=0" >
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -29,7 +30,6 @@
         <td>
           <button class="btn btn-secondary" [routerLink]="['/employee/edit/',item.id]">Edit</button>
           <button class="btn btn-danger"  (click)="deleteBtn(item.id)" style=" margin-left: 1rem;">Delete</button>
-
 
         </td>
 

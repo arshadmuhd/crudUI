@@ -1,0 +1,45 @@
+<div class="container align-items-center col-md-12 col-12 mt-3"  >
+    <button class="btn btn-primary" routerLink="/payment/add">Add Payment</button>
+      <span *ngIf="payment.length==0"> No Details found</span>
+  <table class="table table-bordered mt-3" *ngIf="payment.length!=0" >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Paid Amount</th>
+          <!-- <th scope="col">Remaining Fee</th> -->
+          <th scope="col">Department Name</th>
+
+          <!-- <th scope="col">Phone Number</th> -->
+          <th scope="col">Paid Date</th>   
+          <!-- <th scope="col">Edit/Delete</th> -->
+  
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of payment; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{item.student.studentName}}</td>
+          <td>{{item.paidAmount}}</td>
+          <td>{{item.student.department.departmentName}}</td>
+  
+          <td>{{item.paidDate}}</td>
+      
+          <!-- <td>
+            <button class="btn btn-secondary" [routerLink]="['/student/edit/',item.id]">Edit</button>
+            <button class="btn btn-danger"  style=" margin-left: 1rem;" >Delete</button>
+            (click)="deleteBtn(item.userId)"
+  
+  
+          </td> -->
+  
+  
+          
+        </tr>
+       
+       
+      </tbody>
+    </table>
+  
+  </div>

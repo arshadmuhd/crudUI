@@ -1,1 +1,35 @@
-<p>user-list works!</p>
+<div class="container align-items-center col-md-12 col-12 mt-3"  >
+      <span *ngIf="user.length==0"> No Details found</span>
+  <table class="table table-bordered" *ngIf="user.length!=0" >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">User Name</th>
+          <th scope="col">User Role</th>
+          <th scope="col">Edit/Delete</th>
+  
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of user; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{item.userName}}</td>
+          <td>{{item.userRole}}</td>
+  
+       <td>
+            <button class="btn btn-secondary" [routerLink]="['/user/edit/',item.id]">Edit</button>
+            <button class="btn btn-danger"  style=" margin-left: 1rem;">Delete</button>
+  
+  
+          </td>
+  
+  
+          
+        </tr>
+       
+       
+      </tbody>
+    </table>
+  
+  </div>

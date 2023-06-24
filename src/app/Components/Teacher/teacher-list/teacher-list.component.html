@@ -1,0 +1,52 @@
+<div class="mr-2 ml-2 align-items-center col-md-12 col-12 mt-3"  >
+    <button class="btn btn-primary" routerLink="/teacher/add">Add Teacher</button>
+      <span *ngIf="getTeacher.length==0"> No Details found</span>
+  <table class="table table-bordered mt-3" *ngIf="getTeacher.length!=0" >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Date Of Birth</th> 
+          <th scope="col">Date Of Join</th>   
+          <th scope="col">Place</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Department Head Name</th>
+          <th scope="col">Is Active</th>
+          <th scope="col">Edit/Delete</th>
+  
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of getTeacher; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{item.teacherName}}</td>
+          <td>{{item.teacherEmail}}</td>
+          <td>{{item.teacherPhoneNumber}}</td>
+          <td>{{item.teacherDob}}</td>
+          <td>{{item.teacherDoj}}</td>
+          <td>{{item.teacherPlace}}</td>
+          <td>{{item.department.departmentName}}</td>
+          <td>{{item.department.departmentHeadName}}</td>
+          <td>{{item.isActive}}</td>
+  
+  
+          <td> 
+            <button class="btn btn-secondary" [routerLink]="['/teacher/add/',item.id]">Edit</button>
+            <button class="btn btn-danger"  style=" margin-left: 1rem;" >Delete</button>
+            <!-- (click)="deleteBtn(item.userId)" -->
+  
+  
+          </td>
+  
+  
+          
+        </tr>
+       
+       
+      </tbody>
+    </table>
+  
+  </div>

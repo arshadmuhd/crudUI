@@ -1,38 +1,46 @@
 <div class="container align-items-center col-md-12 col-12 mt-3"  >
-    <span *ngIf="student.length==0"> No Details found</span>
-<table class="table table-bordered" *ngIf="student.length!=0" >
+  <button class="btn btn-primary" routerLink="/student/add">Add Student</button>
+    <span *ngIf="getStudent.length==0"> No Details found</span>
+<table class="table table-bordered mt-3" *ngIf="getStudent.length!=0" >
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
         <th scope="col">Date Of Birth</th>   
         <th scope="col">District</th>
         <th scope="col">Place</th>
         <th scope="col">Department Name</th>
-        <th scope="col">Status</th>
+        <th scope="col">Is Active</th>
         <th scope="col">Edit/Delete</th>
 
        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of student; let i = index">
+      <tr *ngFor="let item of getStudent; let i = index">
         <th scope="row">{{i + 1}}</th>
         <td>{{item.studentName}}</td>
+        <td>{{item.studentEmail}}</td>
+        <td>{{item.phoneNumber}}</td>
+
+
+        <!-- <td>{{item.studentDob}}</td> -->
         <td>{{item.studentDob}}</td>
        
         <td>{{item.studentDistrict}}</td>
         <td>{{item.studentPlace}}</td>
-        <td>{{item.departmentId}}</td>
-        <td>{{item.studentStatus}}</td>
+        <td>{{item.department.departmentName}}</td>
+        <td>{{item.studentIsActive}}</td>
 
 
-        <!-- <td>
-          <button class="btn btn-secondary" [routerLink]="['/employee/edit/',item.id]">Edit</button>
-          <button class="btn btn-danger"  (click)="deleteBtn(item.id)" style=" margin-left: 1rem;">Delete</button>
+        <td>
+          <button class="btn btn-secondary" [routerLink]="['/student/edit/',item.id]">Edit</button>
+          <button class="btn btn-danger"  style=" margin-left: 1rem;" (click)="deleteBtn(item.userId)">Delete</button>
 
 
-        </td> -->
+        </td>
 
 
         

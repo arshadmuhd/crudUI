@@ -1,0 +1,69 @@
+
+<div class="container my-5">
+    <h2>Edit Student</h2>
+    
+    <form #myform="ngForm" (ngSubmit)="updateStudent()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Name</label>
+                <input type="text" class="form-control" placeholder="Name" name="studentName" [(ngModel)]="editStudentRequest.studentName">
+
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Email</label>
+                <input type="email" class="form-control" placeholder="email" name="studentEmail" [(ngModel)]="editStudentRequest.studentEmail">
+
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Phone Number</label>
+                <input type="number" class="form-control" placeholder="number" name="phoneNumber" [(ngModel)]="editStudentRequest.phoneNumber">
+
+              </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Date of Birth</label>
+            <input type="date" class="form-control" placeholder="Date of Birth" name="studentDob" [(ngModel)]="editStudentRequest.studentDob">
+
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Student District</label>
+          <input type="text" class="form-control" id="" name="studentDistrict"  [(ngModel)]="editStudentRequest.studentDistrict">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Student Place</label>
+            <input type="text" class="form-control" name="studentPlace"   [(ngModel)]="editStudentRequest.studentPlace">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="inputState">Student Department</label>
+            <select id="inputState" name="departmentId" class="form-control" name="departmentId" [(ngModel)]="editStudentRequest.departmentId">
+                <!-- <option name="departmentId"  value="{{editStudentRequest.department.departmentName}}" selected>{{editStudentRequest.department.departmentName}}</option>  -->
+          <option name="departmentId"  *ngFor="let item of departments" value="{{item.id}}">{{item.departmentName}}</option>
+
+<!-- 
+
+              <option name="department" selected>Choose...</option>
+              <option name="department" >Active</option>
+              <option name="department">Inactive</option> -->
+            
+            </select>
+          </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Student Status</label>
+            <select id="inputState" name="department" class="form-control" [(ngModel)]="status">
+              <option name="department" selected>Choose...</option>
+              <option name="department" value="true">Active</option>
+              <option name="department" value="false">Inactive</option>
+            
+            </select>
+          </div>
+      
+       
+    
+        <button type="submit" class="btn btn-primary mt-2">Add Student</button>
+      </form>
+    
+    </div>

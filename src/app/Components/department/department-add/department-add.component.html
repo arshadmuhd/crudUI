@@ -4,7 +4,7 @@
     <form #myform="ngForm" (ngSubmit)="addDepartment()">
         <div class="form-row">
             
-        <div class="form-group col-md-4">
+        <!-- <div class="form-group col-md-4">
             <label for="inputState">Department Name</label>
             <select id="inputState" name="departmentName" class="form-control" [(ngModel)]="addDepartmentRequest.departmentName">
               <option name="departmentName" selected>Choose...</option>
@@ -15,16 +15,34 @@
     
             </select>
             <p>{{addDepartmentRequest.departmentName}}</p>
+          </div> -->
+
+          <div class="form-group">
+            <label for="inputAddress">Department Name</label>
+            <input type="text" class="form-control" name="departmentName"   [(ngModel)]="addDepartmentRequest.departmentName">
           </div>
+
+          <div class="form-group col-md-4">
+            <label for="inputState">Department Head</label>
+            <select id="inputState" name="departmentId" class="form-control" [(ngModel)]="addDepartmentRequest.departmentHeadName">
+
+          <option name="departmentId"  *ngFor="let item of teachers" value="{{item.teacherName}}">{{item.teacherName}}</option>
+
+            </select>
+          </div>
+
+
           <div class="form-group col-md-4">
             <label for="inputState">Department Status</label>
-            <select id="inputState" name="department" class="form-control" [(ngModel)]="addDepartmentRequest.departmentStatus">
+            <select id="inputState" name="department" class="form-control" [(ngModel)]="status">
               <option name="departmentName" selected>Choose...</option>
-              <option name="department" value="true" >Active</option>
-              <option name="department" value="false" >inactive</option>
+              <option name="department" value=true >Active</option>
+              <option name="department" value=false >inactive</option>
+
   
             </select>
           </div>
+          <p>{{addDepartmentRequest.departmentStatus}}</p>
           </div>
        
     

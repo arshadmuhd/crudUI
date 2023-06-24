@@ -1,0 +1,44 @@
+<div class="container align-items-center col-md-12 col-12 mt-3"  >
+    <button class="btn btn-primary mr-0" routerLink="/departmentHead/add">Add Department head</button>
+    <span *ngIf="departmentHead.length==0"> No Details found</span>
+<table class="table table-bordered mt-3" *ngIf="departmentHead.length!=0" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Teacher Name</th>
+        <th scope="col">Teacher Dob</th>
+        <th scope="col">Teacher Doj</th>
+        <th scope="col">Teacher Place</th>
+        <th scope="col">Department Name</th>
+        <th scope="col">Edit/Delete</th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of departmentHead; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.teacherName}}</td>
+        <td>{{item.teacherDob}}</td>    
+        <td>{{item.teacherDoj}}</td>
+        <td>{{item.teacherPlace}}</td>
+        <td>{{item.departmentId}}</td>
+
+
+        <td>
+          <button class="btn btn-secondary" [routerLink]="['/course/edit/',item.id]">Edit</button>
+          <button class="btn btn-danger" style=" margin-left: 1rem;">Delete</button>
+          <!-- (click)="deleteBtn(item.id)"  -->
+
+
+        </td>
+
+
+        
+      </tr>
+     
+     
+    </tbody>
+  </table>
+
+</div>
